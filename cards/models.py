@@ -1,13 +1,14 @@
 # cards/models.py
 
 from django.db import models
+from ckeditor.fields import RichTextField 
 
 NUM_BOXES = 5
 BOXES = range(1, NUM_BOXES + 1)
 
 class Card(models.Model):
-    question = models.CharField(max_length=500)
-    answer = models.TextField(max_length=1000)
+    question = RichTextField()
+    answer = RichTextField()
     box = models.IntegerField(
         choices=zip(BOXES, BOXES),
         default=BOXES[0],
