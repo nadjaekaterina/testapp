@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import mimetypes
+mimetypes.add_type("text/javascript", ".js", True)
 import os
 from pathlib import Path
 
@@ -26,7 +27,7 @@ SECRET_KEY = "django-insecure-*z#00hdd+)gt5cmp+yhd1$czxv%4ya@#ls0!9_2z5m4m0(h8en
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['testapplication.pythonanywhere.com']
 
 
 # Application definition
@@ -123,7 +124,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
-MEDIA_URL = '/media/' 
+MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media/'
 
 # Default primary key field type
